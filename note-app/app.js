@@ -4,4 +4,4 @@ const getNotes = require('./notes.js')
 const msg = getNotes()
 console.log(msg)
 
-console.log(validator.isEmail('woonglae@example.com'))
+console.log(validator.isEmail('woonglae'))
