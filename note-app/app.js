@@ -10,7 +10,7 @@ yargs.version('1.1.0')
 //Add command
 yargs.command({
     command: 'add',
-    descirbe: 'Add a new note',
+    describe: 'Add a new note',
     handler: function() {
         console.log('Adding a new note!')
     }
@@ -20,7 +20,7 @@ yargs.command({
 yargs.command({
     command: 'remove',
     describe: 'Remove a note',
-    hander: function() {
+    handler: function() {
         console.log('Removing the note')
     }
 })
