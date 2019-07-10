@@ -16,11 +16,11 @@ yargs.command({
             describe: 'Note title',
             demandOption: true,
             type:'string'
-            
+
         }
     },
     handler: function(argv) {
-        console.log('Adding a new note!')
+        console.log('Adding a new note!', argv)
     }
 })
 
@@ -29,7 +29,7 @@ yargs.command({
     command: 'remove',
     describe: 'Remove a note',
     handler: function() {
-        console.log('Removing the note')
+        console.log('Removing the note', argv)
     }
 })
 
@@ -38,7 +38,7 @@ yargs.command({
     command: 'read',
     describe: 'Read a note',
     handler: function() {
-        console.log('Raeding the note')
+        console.log('Raeding the note', argv)
     }
 })
 
@@ -47,10 +47,14 @@ yargs.command({
     command: 'list',
     describe: 'List notes',
     handler: function() {
-        console.log('listing the note')
+        console.log('listing the note', argv)
     }
 })
 
-console.log(yargs.argv)
 
+// Printing yargs argv
+// console.log(yargs.argv)
+
+// not printing yargs argv, but call yargs so we can access argv
+yargs.parse()
 
