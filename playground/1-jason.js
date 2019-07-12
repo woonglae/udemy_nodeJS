@@ -17,6 +17,8 @@ const data = JSON.parse(dataBuffer.toString())
 
 data.name = "Ray"
 data.age = 29
-fs.writeFileSync('1-json.json',data)
+
+const dataJSON = JSON.stringify(data)
+fs.writeFileSync('1-json.json', dataJSON)
 
 console.log(data)
