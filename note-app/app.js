@@ -25,7 +25,7 @@ yargs.command({
         }
     },
     handler: function(argv) {
-        console.log('Title: ' + argv.title + 'Body: ' + argv.body)
+        console.log('Title: ' + argv.title + ' Body: ' + argv.body)
     }
 })
 
