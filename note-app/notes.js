@@ -28,7 +28,14 @@ const removeNote = function (title) {
     const differentTitle = notes.filter(function (note) {
         return note.title !== title
     })
-    saveNotes(differentTitle)
+    if (differentTitle === notes) {
+        console.log(chalk.reverse.red("No note found!"))
+    } else {
+        saveNotes(differentTitle)
+        console.log(chalk.reverse.green("Note removed!"))
+    }
+    
+    
 }   
 
 const saveNotes = function (notes) {
