@@ -10,8 +10,8 @@ const addNote = function (title, body) {
     const duplicateNotes = notes.filter(function (note) {
         return note.title === title
     })
-
-    if (duplicateNotes === 0) {
+    console.log(duplicateNotes)
+    if (duplicateNotes.length === 0) {
         notes.push({
             title: title,
             body: body
@@ -48,6 +48,7 @@ const loadNotes = function() {
     try {
         const dataBuffer = fs.readFileSync('notes.json')
         const dataJSON = dataBuffer.toString()
+        console.log("load Notes " + dataJSON)
         return JSON.parse(dataJSON)
     } catch (e) {
         return []
