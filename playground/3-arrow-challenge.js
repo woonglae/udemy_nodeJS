@@ -15,7 +15,13 @@ const tasks = {
     }, {
         text: 'Film course',
         completed: false
-    }]
+    }],
+    getTasksToDo() {
+        const taskLeft = this.tasks.filter((task) => {
+            return task.completed === false
+        })
+        return taskLeft
+    }
 }
 
 console.log(tasks.getTasksToDo())
