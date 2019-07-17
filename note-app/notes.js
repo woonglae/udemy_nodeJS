@@ -52,7 +52,7 @@ const readNotes = (title) => {
     if (readNote) {
         console.log("the title: " + chalk.inverse.white(readNote.title) + "\n" + readNote.body)
     } else {
-        console.log(chalk.invers.red('Cannot find the note with the title'))
+        console.log(chalk.inverse.red('Cannot find the note with the title'))
     }
 }
 
@@ -65,7 +65,7 @@ const loadNotes = () => {
     try {
         const dataBuffer = fs.readFileSync('notes.json')
         const dataJSON = dataBuffer.toString()
-        console.log("load Notes " + dataJSON)
+        // console.log("load Notes " + dataJSON)
         return JSON.parse(dataJSON)
     } catch (e) {
         return []
