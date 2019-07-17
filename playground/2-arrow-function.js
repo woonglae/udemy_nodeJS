@@ -1,4 +1,4 @@
-const square = function () {
+const square = function (x) {
     return x * x
 }
 
