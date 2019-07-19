@@ -12,7 +12,6 @@ const addNote = (title, body) => {
 
     debugger
 
-    console.log(duplicateNote)
     if (!duplicateNote) {
         notes.push({
             title: title,
