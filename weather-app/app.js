@@ -1,6 +1,6 @@
 const request = require('request')
 
-const url = 'https://api.darksky.net/forecast/49a007735cb935977fb6644b2dbb0523/37.8267,-122.4233?units=si'
+const url = 'https://api.darksky.net/forecast/49a007735cb935977fb6644b2dbb0523/37.8267'
 
 const geocodeURL = "https://api.mapbox.com/geocoding/v5/mapbox.places/atlanta.json?proximity=-74.70850,40.78375&access_token=pk.eyJ1Ijoid29vbmdsYWUiLCJhIjoiY2p5YzJjanhtMGY4bTNtczVtM3M1NmdrciJ9.Eg3ivZXMcUAzyJf3yTgWmw&limit=1"
 
@@ -10,6 +10,8 @@ const geocodeURL = "https://api.mapbox.com/geocoding/v5/mapbox.places/atlanta.js
 request({ url: url, json: true }, (error, response) => {
     if (error) {
         console.log('Unable to connect to weather service!')
+    } else if (response.body.code === 400) {
+        console.log("Unable to find location")
     } else {
         temp = response.body.currently.temperature
         rainChance = response.body.currently.precipProbability
