@@ -34,18 +34,18 @@ const geocode = (address, callback) => {
     const url = 'https://api.mapbox.com/geocoding/v5/mapbox.places/'+ encodeURIComponent(address) +'.json?proximity=-74.70850,40.78375&access_token=pk.eyJ1Ijoid29vbmdsYWUiLCJhIjoiY2p5YzJjanhtMGY4bTNtczVtM3M1NmdrciJ9.Eg3ivZXMcUAzyJf3yTgWmw&limit=1'
 
     request({url: url, json: true}, (error, response) => {
-    if (error) {
-        callback('Unable to connect to location service!')
-    } else if (response.body.features.length === 0) {
-        callback("Cannot find location information")
-    } else {
-        longitude = response.body.features[0].center[0]
-        latitude = response.body.features[0].center[1]
-        callback("longitude : " + longitude + ", latitude : " + latitude) 
-    }
+        if (error) {
+            callback('Unable to connect to location service!', undefined)
+        } else if (response.body.features.length === 0) {
+            callback("Cannot find location information", undefined)
+        } else {
+            longitude = response.body.features[0].center[0]
+            latitude = response.body.features[0].center[1]
+        }
     })
 }
 
 geocode('Philadelphia', (error, data) => {
-    
+    console.log('Error: ', error)
+    console.long('Data: ', data)
 })
