@@ -39,13 +39,15 @@ const geocode = (address, callback) => {
         } else if (response.body.features.length === 0) {
             callback("Cannot find location information", undefined)
         } else {
-            longitude = response.body.features[0].center[0]
-            latitude = response.body.features[0].center[1]
+            callback(undefined, {
+                longitude : response.body.features[0].center[0],
+                latitude : response.body.features[0].center[1]
+            })
         }
     })
 }
 
-geocode('Philadelphia', (error, data) => {
+geocode('Atlanta', (error, data) => {
     console.log('Error: ', error)
     console.log('Data: ', data)
 })
