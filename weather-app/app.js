@@ -47,5 +47,5 @@ const geocode = (address, callback) => {
 
 geocode('Philadelphia', (error, data) => {
     console.log('Error: ', error)
-    console.long('Data: ', data)
+    console.log('Data: ', data)
 })
