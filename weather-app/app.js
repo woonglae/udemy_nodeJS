@@ -16,20 +16,6 @@ const geocode = require('./utils/geocode')
 //     }
 // })
 
-// const geocodeURL = "https://api.mapbox.com/geocoding/v5/mapbox.places/atlanta.json?proximity=-74.70850,40.78375&access_token=pk.eyJ1Ijoid29vbmdsYWUiLCJhIjoiY2p5YzJjanhtMGY4bTNtczVtM3M1NmdrciJ9.Eg3ivZXMcUAzyJf3yTgWmw&limit=1"
-
-// request({ url: geocodeURL, json: true}, (error, response) => {
-//     if (error) {
-//         console.log("Unable to connect to geographic service!")
-//     } else if (response.body.features.length === 0) {
-//         console.log("Cannot find location information")
-//     } else {
-//         longitude = response.body.features[0].center[0]
-//         latitude = response.body.features[0].center[1]
-//         console.log("longitude : " + longitude + ", latitude : " + latitude)    
-//     }
-
-// })
 
 geocode('Seoul South Korea', (error, data) => {
     console.log('Error: ', error)
