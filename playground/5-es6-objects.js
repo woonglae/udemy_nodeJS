@@ -3,8 +3,8 @@
 const name = "Ray"
 const userAge = 29
 const user = {
-    name : name,
-    age : userAge,
+    name,
+    age: userAge,
     location: "Atlanta"
 }
 
