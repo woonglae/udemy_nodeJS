@@ -10,8 +10,8 @@ geocode('Atlanta', (error, geocodeData) => {
                 if (error) {
                     return console.log(error)
                 } else {
-                    console.log('Error', error)
-                    console.log('Data', forecastData)
+                    console.log(geocodeData.location)
+                    console.log( forecastData)
                 }
         })    
     }    
