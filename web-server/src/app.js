@@ -10,7 +10,14 @@ app.use(express.static(publicDirectoryPath))
 
 app.get('', (req, res) => {
     // need to match filename in the views folder and the string in res.render() 
-    res.render('index')
+    res.render('index', {
+        title: 'Weather App',
+        name: 'Ray'
+    })
+})
+
+app.get('/about', (req, res) => {
+    res.render('about')
 })
 
 // app.com/weather
