@@ -20,6 +20,12 @@ app.get('/about', (req, res) => {
     res.render('about')
 })
 
+app.get('/help', (req, res) => {
+    res.render('help', {
+        helpMessage: 'Welcome to help page'
+    })
+})
+
 // app.com/weather
 app.get('/weather', (req, res) => {
     res.send({
