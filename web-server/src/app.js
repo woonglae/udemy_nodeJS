@@ -26,12 +26,18 @@ app.get('', (req, res) => {
 })
 
 app.get('/about', (req, res) => {
-    res.render('about')
+    res.render('about', {
+        title: 'About me',
+        name: 'Ray'
+    })
+    
 })
 
 app.get('/help', (req, res) => {
     res.render('help', {
-        helpMessage: 'Welcome to help page'
+        helpMessage: 'Welcome to help page',
+        title: 'Help',
+        name: 'Ray'
     })
 })
 
