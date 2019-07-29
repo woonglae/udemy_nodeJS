@@ -41,6 +41,7 @@ app.get('/help', (req, res) => {
     })
 })
 
+
 // app.com/weather
 app.get('/weather', (req, res) => {
     res.send({
@@ -48,6 +49,27 @@ app.get('/weather', (req, res) => {
         location: 'Atlanta'
     })
 })
+
+
+// send 404 for subdivision of help page
+app.get('/help/*', (req, res) => {
+    res.render('404', {
+        title: '404',
+        name: 'Ray',
+        errorMessage: 'Help is not found'
+
+    })
+})
+    
+// send 404 for rest of homepages
+app.get('*', (req, res) => {
+    res.render('404', {
+        title: '404',
+        name: 'Ray',
+        errorMessage: 'Page is not found'
+    })
+})    
+
 
 app.listen(3000, () => {
     console.log('Server is up on port 3000')
